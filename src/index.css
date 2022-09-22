@@ -6,7 +6,7 @@ body {
 }
 
 input::placeholder,
-text-area::placeholder {
+textarea::placeholder {
   font-family: "Roboto", sans-serif;
   color: #aaa;
 }
@@ -26,6 +26,7 @@ nav button {
   font-family: "Roboto", sans-serif;
   cursor: pointer;
   font-size: 1em;
+  padding: 10px 10px;
 }
 
 a:hover,
@@ -77,6 +78,7 @@ textarea {
   border: none;
   padding: 10px 15px;
   font-size: 1em;
+  margin-top: 20px;
 }
 
 .btn.btn-dark {

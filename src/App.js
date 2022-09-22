@@ -16,6 +16,9 @@ import Login from "./pages/Login/Login";
 import Register from "./pages/Register/Register";
 import CreatePost from "./pages/CreatePost/CreatePost";
 import Dashboard from "./pages/Dashboard/Dashboard";
+import Search from "./pages/Search/Search";
+import Post from "./pages/Post/Post";
+import EditPost from "./pages/EditPost/EditPost";
 
 function App() {
   const [user, setUser] = useState(undefined);
@@ -25,7 +28,7 @@ function App() {
     onAuthStateChanged(auth, (user) => {
       setUser(user);
     });
-  }, [auth]);
+  }, []);
 
   if (loadingUser) {
     return <p> Carregando...</p>;
@@ -39,6 +42,8 @@ function App() {
             <Routes>
               <Route path="/" element={<Home></Home>}></Route>
               <Route path="/about" element={<About></About>}></Route>
+              <Route path="/search" element={<Search></Search>}></Route>
+              <Route path="/posts/:id" element={<Post></Post>}></Route>
               <Route
                 path="/login"
                 element={
@@ -61,6 +66,17 @@ function App() {
                   )
                 }
               ></Route>
+              <Route
+                path="/posts/edit/:id"
+                element={
+                  user ? (
+                    <EditPost></EditPost>
+                  ) : (
+                    <Navigate to={"/login"}></Navigate>
+                  )
+                }
+              ></Route>
+
               <Route
                 path="dashboard"
                 element={
