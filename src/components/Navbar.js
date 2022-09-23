@@ -41,18 +41,6 @@ const Navbar = () => {
                 Dashboard
               </NavLink>
             </li>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veritatis
-            possimus vero autem tempora repellendus porro impedit debitis
-            delectus, molestiae, error eaque, ut beatae earum placeat
-            consequatur facere perferendis necessitatibus nemo! Dignissimos,
-            nam! Consequatur dignissimos quis atque quasi praesentium velit nisi
-            saepe recusandae illum at facilis assumenda voluptate explicabo in
-            harum, perferendis animi, est fugit quo corporis, earum commodi
-            aperiam placeat. Maxime quas cum consequatur eaque eius voluptas
-            natus laudantium eligendi incidunt, cupiditate id vitae nam suscipit
-            nobis tempora tenetur, tempore dolor assumenda. Temporibus
-            perferendis deserunt perspiciatis tempore repellendus ratione
-            consequuntur?
           </>
         )}
         <li>
