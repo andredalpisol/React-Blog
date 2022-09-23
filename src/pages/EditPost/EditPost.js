@@ -68,13 +68,7 @@ const EditPost = () => {
       {post && (
         <>
           <h2>Edit your post</h2>
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quaerat, sed
-          eos et rem distinctio sunt ipsa impedit facilis assumenda ullam
-          possimus vitae! Blanditiis, esse corrupti vel natus dolore eaque?
-          Illo! Mollitia maxime alias aperiam eos ipsum, recusandae ipsam qui
-          itaque sapiente sint, voluptatibus eum perspiciatis et enim facere
-          odit odio! Id, qui totam. Neque, provident excepturi ipsum nobis quia
-          nulla!
+
           <p>Edit whatever you want!</p>
           <form onSubmit={handleSubmit}>
             <label>
