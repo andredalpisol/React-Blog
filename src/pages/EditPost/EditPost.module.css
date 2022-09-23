@@ -7,7 +7,7 @@
 }
 
 .edit_post p {
-  color: #aaa;
+  color: #666;
   margin-bottom: 2em;
 }
 
@@ -17,6 +17,9 @@
   font-weight: bold;
 }
 
+.edit_post button {
+  width: 250px;
+}
 .image_preview {
   max-width: 100%;
   margin-bottom: 1em;

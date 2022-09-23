@@ -7,6 +7,10 @@
 }
 
 .create_post p {
-  color: #aaa;
+  color: #666;
   margin-bottom: 2em;
+}
+
+.create_post button {
+  width: 250px;
 }

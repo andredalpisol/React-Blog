@@ -3,6 +3,8 @@
   align-items: center;
   justify-content: space-between;
   padding: 0.5em 2em;
+  background-color: #222;
+  color: #fff !important;
 }
 
 .brand {
@@ -20,16 +22,13 @@
 }
 
 .links_list li {
+  display: flex;
+  justify-content: center;
   margin-right: 1em;
 }
 
-.links list li a {
+.links list li a,
+.links list li button {
   padding: 0.4em 0.6em;
   text-style: none;
-}
-
-.button {
-  padding: 0.4em 0.6em;
-
-  display: inline;
 }

@@ -39,7 +39,7 @@ const EditPost = () => {
     try {
       new URL(image);
     } catch (error) {
-      setFormError("A imagem precisa ser uma URL.");
+      setFormError("The image needs to be an url");
     }
 
     // create tags array
@@ -47,9 +47,9 @@ const EditPost = () => {
 
     // check values
     if (!title || !image || !tags || !body) {
-      setFormError("Por favor, preencha todos os campos!");
+      setFormError("Please, fill all the fields!");
     }
-
+    console.log(formError);
     if (formError) return;
 
     updateDocument(id, {
@@ -61,15 +61,13 @@ const EditPost = () => {
       createdBy: user.displayName,
     });
 
-    // redirect to home page
-    /*   navigate("/"); */
+    navigate("/");
   };
 
   return (
     <div className={styles.edit_post}>
       {post && (
         <>
-          {" "}
           <h2>Edit your post</h2>
           <p>Edit whatever you want!</p>
           <form onSubmit={handleSubmit}>
@@ -79,7 +77,7 @@ const EditPost = () => {
                 type="text"
                 name="text"
                 required
-                placeholder="Title of your yous..."
+                placeholder="Title of your post"
                 onChange={(e) => setTitle(e.target.value)}
                 value={title}
               />
@@ -99,7 +97,11 @@ const EditPost = () => {
               {" "}
               Preview of the actual image:
             </p>
-            <img src={post.image} className={styles.image_preview} />
+            <img
+              src={post.image}
+              className={styles.image_preview}
+              alt={post.image}
+            />
             <label>
               <span>Content:</span>
               <textarea

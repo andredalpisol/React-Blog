@@ -21,36 +21,37 @@ const CreatePost = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     setFormError("");
-    console.log(response);
 
     // validate image
-    try {
-      new URL(image);
-    } catch (error) {
-      setFormError("A imagem precisa ser uma URL.");
-    }
+    let imagetest = image;
 
+    try {
+      new URL(imagetest);
+    } catch (error) {
+      setFormError("The image needs to be an URL");
+      return;
+    }
+    let tagsarray = [];
     // create tags array
-    const tagsArray = tags.split(",").map((tag) => tag.trim().toLowerCase());
+    tags.length > 0
+      ? (tagsarray = tags.split(",").map((tag) => tag.trim().toLowerCase()))
+      : (tagsarray = null);
 
     // check values
-    if (!title || !image || !tags || !body) {
-      setFormError("Por favor, preencha todos os campos!");
+    if (!title || !image || tagsarray === null || !body) {
+      setFormError("Please, fill up all the fields!");
+      return;
     }
-
-    if (formError) return;
 
     insertDocument({
       title,
       image,
       body,
-      tags: tagsArray,
+      tags: tagsarray,
       uid: user.uid,
       createdBy: user.displayName,
     });
-
-    // redirect to home page
-    /*   navigate("/"); */
+    navigate("/");
   };
 
   return (
@@ -63,8 +64,7 @@ const CreatePost = () => {
           <input
             type="text"
             name="text"
-            required
-            placeholder="Title of your yous..."
+            placeholder="Title of your post"
             onChange={(e) => setTitle(e.target.value)}
             value={title}
           />
@@ -74,7 +74,6 @@ const CreatePost = () => {
           <input
             type="text"
             name="image"
-            required
             placeholder="Image that represents this post"
             onChange={(e) => setImage(e.target.value)}
             value={image}
@@ -84,7 +83,6 @@ const CreatePost = () => {
           <span>Content:</span>
           <textarea
             name="body"
-            required
             placeholder="Post content"
             onChange={(e) => setBody(e.target.value)}
             value={body}
@@ -95,7 +93,6 @@ const CreatePost = () => {
           <input
             type="text"
             name="tags"
-            required
             placeholder="Tags of your post, separated by commas"
             onChange={(e) => setTags(e.target.value)}
             value={tags}
