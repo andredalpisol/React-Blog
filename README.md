@@ -1,6 +1,19 @@
-# Getting Started with Create React App
+# Reactive Blog
+  <br>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Built a reactive blog app in React, resources used:
+- React - Hooks, Context API;
+- Firebase - Authentication, Database;
+
+<div align="center">
+<a href="https://imgur.com/pRtDldo"><img src="https://i.imgur.com/pRtDldo.png" title="source: imgur.com" /></a>
+<a href="https://imgur.com/E8QUtmN"><img src="https://i.imgur.com/E8QUtmN.png"></a> 
+
+</div>
+  <br>
+  <br>
+
+
 
 ## Available Scripts
 
